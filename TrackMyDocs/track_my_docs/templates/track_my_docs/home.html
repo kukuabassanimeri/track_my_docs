@@ -1,0 +1,17 @@
+{% extends 'track_my_docs/base.html' %}
+
+{% load static %}
+
+<!--User contact us css link-->
+{% block css %}
+    <link rel="stylesheet" href="{% static 'track_my_docs/home.css' %}">
+{% endblock css %}
+
+<script src="https://kit.fontawesome.com/caeb9ec53e.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+{% block content %}
+    <!--TrackMyDocs Introduction message-->
+    <h1 class="text-xl text-center pb-3"><span class=" font-bold text-orange-600">Welcome to TrackMyDocs !</h1>
+    <p class="text-center pb-3">Your all-in-one digital platform for tracking your ID status. </p>
+{% endblock content %}

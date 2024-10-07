@@ -1,0 +1,42 @@
+.lost-id-reapplication label {
+    display: block;  /* Ensures the label is on a separate line above the input */
+    margin-bottom: 5px;  /* Adds space between the label and input */
+    font-weight: bold;
+}
+
+.lost-id-reapplication input[type="text"],
+.lost-id-reapplication textarea {
+    width: 20%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #737373;
+    border-radius: 10px;
+    
+}
+
+.lost-id-reapplication textarea{
+    height: 100px; 
+    resize: vertical; 
+}
+
+.lost-id-reapplication input[type="file"] {
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #737373;
+    cursor: pointer;
+    width: 20%;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.lost-id-reapplication input[type="file"]::file-selector-button {
+    padding: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    
+     
+}

@@ -1,0 +1,24 @@
+.complaint label {
+    display: block;  /* Ensures the label is on a separate line above the input */
+    margin-bottom: 5px;  /* Adds space between the label and input */
+    font-weight: bold;
+}
+
+.complaint input[type="text"],
+.complaint input[type="number"],
+.complaint input[type="password"],
+.complaint input[type="email"],
+.complaint textarea {
+    width: 20%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #737373;
+    border-radius: 10px;
+    
+}
+
+.complaint textarea{
+    height: 100px; 
+    resize: vertical; 
+}

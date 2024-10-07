@@ -1,0 +1,19 @@
+.user-signup input[type="text"],
+.user-signup input[type="password"],
+.user-signup input[type="email"] {
+    width: 20%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #737373;
+    border-radius: 10px;
+    
+}
+.user-signup label {
+    display: block;  /* Ensures the label is on a separate line above the input */
+    margin-bottom: 5px;  /* Adds space between the label and input */
+    font-weight: bold;
+}
+.user-signup span{
+    display: none; 
+}

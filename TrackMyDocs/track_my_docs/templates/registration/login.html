@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackMyDocs</title>
+
+    {% load static %}
+    <link href="{% static 'track_my_docs/login.css' %}" rel="stylesheet">
+
+    <!--Support css-->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://kit.fontawesome.com/caeb9ec53e.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="bg-[#1C2120] text-[#FFFFFF]">
+    <div class="pt-10">
+        <div class="text-center pb-5">
+            <i class="fa fa-book text-7xl pl-4" aria-hidden="true"></i>
+        </div>
+        <p class="text-center pb-5 ">Welcome to <span class="font-bold text-orange-600">TrackMyDocs </span>
+            <br>
+            <br>
+            <span>Your go-to platform for tracking your ID status.</span></p>
+
+        <form action="" method="POST" class="login text-center">
+            {% csrf_token %} 
+            {{ form.as_p }}
+
+            <input type="hidden" name="next" value="{{ next }}">
+            <p>
+                <input type="submit" value="Log In" class="bg-[#FEB06A] w-32 h-10 rounded cursor-pointer mt-4 font-bold">
+            </p>
+            <p class="pt-5">Do not have an account?<a href="{% url 'track_my_docs:user-signup' %}"><br><span class="font-bold">Sign up !</span></a></p>
+        </form>
+
+        <p class="text-center pt-5">
+            Forgot Password?
+        </p>
+        <p class="font-bold text-center"><a href="{% url 'track_my_docs:password_reset' %}">Reset !</a></p>
+    </div>
+</body>
+</html>
