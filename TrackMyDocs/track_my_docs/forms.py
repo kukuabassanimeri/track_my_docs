@@ -17,7 +17,7 @@ class LoginForm(forms.Form):
     password = forms.CharField( widget=forms.PasswordInput)
     
 
-#TrackMyDocs user contact us form
+#TrackMyDocs user complaint form
 class UserComplaintForm(forms.ModelForm):
     class Meta:
         model = UserComplaintForm
@@ -27,7 +27,7 @@ class UserComplaintForm(forms.ModelForm):
 class NewIDApplicationModelForm(forms.ModelForm):
     class Meta:
         model = NewIDApplicationModelForm
-        fields = ['individual_no', 'name', 'nationality', 'manifest', 'headshot', 'fingerprint' ]
+        fields = [ 'name', 'manifest', 'headshot', 'fingerprint' ]
 
 #TrackMyDocs user ID status correction
 class StatusCorrectionModelForm(forms.ModelForm):

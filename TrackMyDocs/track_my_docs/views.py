@@ -34,7 +34,7 @@ def Complaint(request):
         complaint_form = UserComplaintForm(request.POST)
         if complaint_form.is_valid():
             complaint_form.save()
-            request.session['message'] = "Your request has been received, we will get back to you soon"
+            request.session['message'] = "Your complaint is received and it is being reviewed"
             
             return redirect(request.path)
     else:
@@ -56,7 +56,7 @@ def new_id_application(request):
         form = NewIDApplicationModelForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Your application has been received. We will get back to you shortly.')
+            messages.success(request, 'Your application has been received and it is being processed.')
             return redirect('track_my_docs:new-id-application')
     else:
         form = NewIDApplicationModelForm()
@@ -83,7 +83,7 @@ def lost_id_reapplication(request):
         lost_form = LostIDReapplicationModelForm(request.POST, request.FILES)
         if lost_form.is_valid():
             lost_form.save()
-            messages.success(request, 'Your reapplication was successful. It is now under review, thanks')
+            messages.success(request, 'Your re-application is received and it is under review')
             return redirect('track_my_docs:lost-id-reapplication')
     else:
         lost_form = LostIDReapplicationModelForm()

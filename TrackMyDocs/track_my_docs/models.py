@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 class UserComplaintForm(models.Model):
     name = models.CharField(max_length=100)
     individual_no = models.IntegerField()
-    phone = models.IntegerField()
     message = models.TextField()
     
     def __str__(self):
@@ -23,15 +22,14 @@ class UserProfile(models.Model):
 
 #TracKMyDocus user new ID application
 class NewIDApplicationModelForm(models.Model):
-    individual_no = models.IntegerField()
     name = models.CharField(max_length=100)
-    nationality = models.CharField(max_length=50)
     manifest = models.ImageField(default='default.jpg', upload_to='profile_pics')
     headshot = models.ImageField(default='default.jpg', upload_to='profile_pics')
     fingerprint = models.ImageField(default='default.jpg', upload_to='profile_pics')
     
     def __str__(self):
         return self.name
+    
 #TrackMyDocs users ID status correction
 class StatusCorrectionModelForm(models.Model):
     user_name = models.CharField(max_length=50)
