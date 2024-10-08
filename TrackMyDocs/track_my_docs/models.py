@@ -40,7 +40,6 @@ class StatusCorrectionModelForm(models.Model):
         return self.user_name
 
 #TrackMyDocs user lost id reapplication
-
 class LostIDReapplicationModelForm(models.Model):
     username = models.CharField(max_length=50)
     police_abstract = models.ImageField(default='default.jpg', upload_to='profile_pics')
