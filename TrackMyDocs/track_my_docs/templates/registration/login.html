@@ -33,12 +33,14 @@
                 <input type="submit" value="Log In" class="bg-[#FEB06A] w-32 h-10 rounded cursor-pointer mt-4 font-bold">
             </p>
             <p class="pt-5">Do not have an account?<a href="{% url 'track_my_docs:user-signup' %}"><br><span class="font-bold">Sign up !</span></a></p>
+
+            <p class="text-center pt-5">
+                Forgot Password?
+            </p>
+            <p class="font-bold text-center"><a href="{% url 'track_my_docs:password_reset' %}">Reset !</a></p>
         </form>
 
-        <p class="text-center pt-5">
-            Forgot Password?
-        </p>
-        <p class="font-bold text-center"><a href="{% url 'track_my_docs:password_reset' %}">Reset !</a></p>
+        
     </div>
 </body>
 </html>
