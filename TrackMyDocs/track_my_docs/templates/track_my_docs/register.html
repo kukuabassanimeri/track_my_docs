@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,23 +16,31 @@
     <link rel="stylesheet" href="{% static 'track_my_docs/register.css' %}">
 
 </head>
-<body class="bg-[#1C2120] text-[#FFFFFF] pt-10">
+
+<body class="bg-[#1C2120] text-[#FFFFFF] pt-5">
     <div class="text-center pb-5">
         <i class="fa fa-book text-7xl pl-4" aria-hidden="true"></i>
     </div>
-    <p class="text-center pb-5">Join <span class="font-bold text-orange-600">TrackMyDocs</span> to track Your ID status.</p>
+    <p class="text-center pb-5">Join <span class="font-bold text-orange-600">TrackMyDocs</span> to track Your ID status.
+    </p>
 
-    <form action="" method="POST" class="user-signup text-center">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <p>
-            <input type="submit" value="Sign Up" class="bg-[#FEB06A] w-32 h-10 rounded cursor-pointer mt-4 font-bold">
-        </p>
-        <div class="pt-5">
-            <p>Already Have Account?</p>
-            <p class="font-bold"><a href="{% url 'track_my_docs:user-login' %}">Login !</a></p>
+    <div class="flex items-center justify-center text-black">
+        <div class="bg-white max-w-3xl w-full shadow-lg rounded-lg p-2">
+            <form action="" method="POST" class="user-signup text-center">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <p>
+                    <input type="submit" value="Sign Up"
+                        class="bg-[#FEB06A] w-32 h-10 rounded cursor-pointer mt-4 font-bold">
+                </p>
+                <div class="pt-5">
+                    <p>Already Have Account?</p>
+                    <p class="font-bold"><a href="{% url 'track_my_docs:user-login' %}">Login !</a></p>
+                </div>
+
+            </form>
         </div>
-        
-    </form>
+    </div>
 </body>
+
 </html>

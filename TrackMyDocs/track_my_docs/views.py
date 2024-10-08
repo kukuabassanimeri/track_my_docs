@@ -83,7 +83,7 @@ def lost_id_reapplication(request):
         lost_form = LostIDReapplicationModelForm(request.POST, request.FILES)
         if lost_form.is_valid():
             lost_form.save()
-            messages.success(request, 'Your reapplication was successful. It is now under review')
+            messages.success(request, 'Your reapplication was successful. It is now under review, thanks')
             return redirect('track_my_docs:lost-id-reapplication')
     else:
         lost_form = LostIDReapplicationModelForm()

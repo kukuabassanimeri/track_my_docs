@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,33 +15,44 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body class="bg-[#1C2120] text-[#FFFFFF]">
     <div class="pt-10">
-        <div class="text-center pb-5">
+        <div class="text-center pb-3">
             <i class="fa fa-book text-7xl pl-4" aria-hidden="true"></i>
         </div>
-        <p class="text-center pb-5 ">Welcome to <span class="font-bold text-orange-600">TrackMyDocs </span>
+        <p class="text-center pb-3 ">Welcome to <span class="font-bold text-orange-600">TrackMyDocs </span>
             <br>
             <br>
-            <span>Your go-to platform for tracking your ID status.</span></p>
+            <span>Your go-to platform for tracking your ID status.</span>
+        </p>
+        <div class="flex items-center justify-center text-black pt-3">
+            <div class="bg-white max-w-md w-full shadow-lg rounded-lg p-4">
+                <form action="" method="POST" class="login text-center">
+                    {% csrf_token %}
+                    {{ form.as_p }}
 
-        <form action="" method="POST" class="login text-center">
-            {% csrf_token %} 
-            {{ form.as_p }}
+                    <input type="hidden" name="next" value="{{ next }}">
+                    <p>
+                        <input type="submit" value="Log In"
+                            class="bg-[#FEB06A] w-32 h-10 rounded cursor-pointer mt-4 font-bold transition-transform duration-300 hover:scale-105">
+                    </p>
+                    <p class="pt-3">Do not have an account?
+                        <a href="{% url 'track_my_docs:user-signup' %}">
+                            <br><span class="font-bold">Sign up !</span>
+                        </a>
+                    </p>
 
-            <input type="hidden" name="next" value="{{ next }}">
-            <p>
-                <input type="submit" value="Log In" class="bg-[#FEB06A] w-32 h-10 rounded cursor-pointer mt-4 font-bold">
-            </p>
-            <p class="pt-5">Do not have an account?<a href="{% url 'track_my_docs:user-signup' %}"><br><span class="font-bold">Sign up !</span></a></p>
-
-            <p class="text-center pt-5">
-                Forgot Password?
-            </p>
-            <p class="font-bold text-center"><a href="{% url 'track_my_docs:password_reset' %}">Reset !</a></p>
-        </form>
-
-        
+                    <p class="text-center pt-3">
+                        Forgot Password?
+                    </p>
+                    <p class="font-bold text-center">
+                        <a href="{% url 'track_my_docs:password_reset' %}">Reset !</a>
+                    </p>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
+
 </html>
