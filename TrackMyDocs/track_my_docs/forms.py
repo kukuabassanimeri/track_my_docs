@@ -36,7 +36,6 @@ class StatusCorrectionModelForm(forms.ModelForm):
         fields = ['user_name', 'user_id', 'reason']
 
 # TrackMyDocs user lost Id reapplication
-
 class LostIDReapplicationModelForm(forms.ModelForm):
     class Meta:
         model = LostIDReapplicationModelForm
