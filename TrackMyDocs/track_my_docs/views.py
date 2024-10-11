@@ -6,6 +6,7 @@ from .forms import NewIDApplicationModelForm, StatusCorrectionModelForm, LostIDR
 from django.contrib import messages
 
 
+
 #TrackMyDocs user signup view
 def user_signup(request):
     if request.method == 'POST':
@@ -14,7 +15,7 @@ def user_signup(request):
             user = user_form.save(commit=False)
             user.set_password(user_form.cleaned_data['password'])
             user.save()
-            return redirect('track_my_docs:user-login')
+            return redirect('login')
     else:
         user_form = UserRegisterForm()
     return render(request, 'track_my_docs/register.html', {'form': user_form})
@@ -47,6 +48,7 @@ def userprofile(request):
 
 #TrackMyDocs homepage view
 
+@login_required
 def home(request):
     return render(request, 'track_my_docs/home.html')
 

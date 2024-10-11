@@ -131,7 +131,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'track_my_docs:home'
-LOGIN_URL = 'track_my_docs:user-login'
+LOGIN_URL = 'login'
 
 LOGOUT_REDIRECT_URL = 'login'
 
@@ -141,3 +141,4 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+PASSWORD_RESET_TIMEOUT = 1800
