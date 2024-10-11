@@ -1,12 +1,12 @@
 .status-correction label {
-    display: block;  /* Ensures the label is on a separate line above the input */
-    margin-bottom: 5px;  /* Adds space between the label and input */
+    display: block;  
+    margin-bottom: 5px; 
     font-weight: bold;
 }
 
 .status-correction input[type="text"],
 .status-correction textarea {
-    width: 20%;
+    width: 33.333333%;
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -25,7 +25,7 @@
     margin-top: 5px;
     background-color: #737373;
     cursor: pointer;
-    width: 20%;
+    width: 33.333333%;
     border-radius: 10px;
     margin-bottom: 5px;
 }
@@ -36,7 +36,5 @@
     color: white;
     border: none;
     border-radius: 10px;
-    cursor: pointer;
-    
-     
+    cursor: pointer;   
 }

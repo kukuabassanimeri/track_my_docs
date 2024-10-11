@@ -9,7 +9,7 @@
 .new_application input[type="password"],
 .new_application input[type="email"]
 .new_application textarea {
-    width: 20%;
+    width: 33.333333%;
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 5px;

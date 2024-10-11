@@ -4,28 +4,22 @@
     font-weight: bold;
 }
 
-.lost-id-reapplication input[type="text"],
-.lost-id-reapplication textarea {
-    width: 50%;
+.lost-id-reapplication input[type="text"]{
+    width: 33.333333%;
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
     background-color: #737373;
-    border-radius: 10px;
-    
+    border-radius: 10px; 
 }
 
-.lost-id-reapplication textarea{
-    height: 100px; 
-    resize: vertical; 
-}
 
 .lost-id-reapplication input[type="file"] {
     padding: 5px;
     margin-top: 5px;
     background-color: #737373;
     cursor: pointer;
-    width: 80%;
+    width: 33.333333%;
     border-radius: 10px;
     margin-bottom: 5px;
 }
@@ -36,7 +30,5 @@
     color: white;
     border: none;
     border-radius: 10px;
-    cursor: pointer;
-    
-     
+    cursor: pointer;  
 }
