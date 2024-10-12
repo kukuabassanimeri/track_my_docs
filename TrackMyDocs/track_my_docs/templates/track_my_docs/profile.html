@@ -3,8 +3,9 @@
 {% load static %}
 {% block content %}
 <div>
-   <div>
+   <div class="">
      <img src="{{ user.userprofile.photo.url }}" alt="Abass">
+     <!-- <img src="{% static 'media/AbassKuku.jpg' %}" alt="" class="w-20 rounded"> -->
      <div>
        <h2>{{ user.username }}</h2>
        <p>{{ user.email }}</p>

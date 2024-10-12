@@ -17,7 +17,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="{% static 'track_my_docs/base.css' %}">
-    <link rel="icon" type="image/x-icon" href="{% static 'media/documentation.png' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'media_files/documentation.png' %}">
 
     <script src="https://kit.fontawesome.com/caeb9ec53e.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -38,7 +38,7 @@
             </li>
 
             <li class="hover:text-orange-600"><a href="{% url 'track_my_docs:home' %}">Home</a></li>
-            <li class="hover:text-orange-600"><a href="#">Profile</a></li>
+            <li class="hover:text-orange-600"><a href="{% url 'track_my_docs:user-profile' %}">Profile</a></li>
             <li class="hover:text-orange-600"><a href="{% url 'logout' %}" class="logout">Log Out</a></li>
 
         </ul>
