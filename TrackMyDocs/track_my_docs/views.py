@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import UserRegisterForm
-from .forms import UserComplaintForm
+from .forms import UserComplaintForm, UpdateUserModelForm, UpdateProfileModelForm
 from django.contrib.auth.decorators import login_required
 from .forms import NewIDApplicationModelForm, StatusCorrectionModelForm, LostIDReapplicationModelForm
 from django.contrib import messages
@@ -43,11 +43,27 @@ def Complaint(request):
     return render(request, 'track_my_docs/complaint.html', context_variable)
 
 #TrackMyDocs user profile view
+@login_required
 def userprofile(request):
-    return render(request, 'track_my_docs/profile.html')
+    if request.method == "POST":
+        u_form = UpdateUserModelForm(request.POST, instance=request.user)
+        p_form = UpdateProfileModelForm(request.POST, request.FILES, instance=request.user.userprofile)
+        
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            messages.success(request, 'Your profile has been updated successfully.')
+            return redirect('track_my_docs:user-profile')
+    else:
+        u_form = UpdateUserModelForm(instance=request.user)
+        p_form = UpdateProfileModelForm(instance=request.user.userprofile)
+    context_variable = {
+        'u_form': u_form,
+        'p_form': p_form,
+    }
+    return render(request, 'track_my_docs/profile.html', context_variable)
 
 #TrackMyDocs homepage view
-
 @login_required
 def home(request):
     return render(request, 'track_my_docs/home.html')

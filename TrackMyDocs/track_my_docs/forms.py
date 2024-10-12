@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import UserComplaintForm, NewIDApplicationModelForm, StatusCorrectionModelForm, LostIDReapplicationModelForm
+from .models import (UserComplaintForm, NewIDApplicationModelForm, StatusCorrectionModelForm, LostIDReapplicationModelForm, UserProfile)
 
 #TrackMyDocs user registration form
 class UserRegisterForm(forms.ModelForm):
@@ -40,3 +40,15 @@ class LostIDReapplicationModelForm(forms.ModelForm):
     class Meta:
         model = LostIDReapplicationModelForm
         fields = ['username', 'police_abstract']
+
+#TrackMyDocs update user form
+class UpdateUserModelForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email']
+        
+# TrackMyDocs user update profile form
+class UpdateProfileModelForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['photo']
