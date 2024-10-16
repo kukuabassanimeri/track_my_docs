@@ -1,35 +1,41 @@
 {% extends "track_my_docs/base.html" %}
 
 {% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'track_my_docs/profile.css' %}">
+{% endblock css%}
+
+  <!--Support css-->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script src="https://kit.fontawesome.com/caeb9ec53e.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 {% block content %}
-<div class="bg-white text-black">
+<div class=" flex flex-col justify-center items-center">
   <div class="">
-    <img src="{{ user.userprofile.photo.url }}" alt="Abass">
+    <img src="{{ user.userprofile.photo.url }}" alt="Abass" class="w-32 rounded-full h-32 cursor-pointer">
 
     <div>
       <h2>{{ user.username }}</h2>
       <p>{{ user.email }}</p>
     </div>
   </div>
-
-  <!-- FORM HERE -->
-  <form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <fieldset class="form-group">
-      <legend class="border-bottom mb-4">
-        Profile Info!
-      </legend>
-      {{ u_form.as_p }}
-      {{ p_form.as_p }}
-    </fieldset>
-
-    <div class="form-group">
-      <button type="submit" class="btn btn-outline-info">Update!</button>
-
-    </div>
-  </form>
-
-
+<div class="flex items-center justify-center text-black pt-3">
+  <div class="bg-white max-w-xl w-full shadow-lg rounded-lg p-4">
+    <form action="" method="POST" enctype="multipart/form-data" class="profile text-center">
+      {% csrf_token %}
+        {{ u_form.as_p }}
+        {{ p_form.as_p}}
+  
+      <div class="form-group">
+        <button type="submit" class="bg-[#FEB06A] w-32 h-10 rounded cursor-pointer mt-4 font-bold transition-transform duration-300 hover:scale-105">Update!</button>
+  
+      </div>
+    </form>
+  </div>
+</div>
+  
 </div>
 
 {% endblock content %}

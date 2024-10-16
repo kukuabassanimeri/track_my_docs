@@ -1,0 +1,43 @@
+.profile label {
+    display: block;  
+    margin-bottom: 5px; 
+    font-weight: bold;
+}
+
+.profile input[type="text"],
+.profile input[type="email"] {
+    width: 50%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #737373;
+    border-radius: 10px;
+}
+
+.profile span{
+    display: none;
+}
+
+.profile input[type="file"] {
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #737373;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.profile input[type="file"]::file-selector-button {
+    padding: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    
+     
+}
+.hidden {
+    display: none;
+  }

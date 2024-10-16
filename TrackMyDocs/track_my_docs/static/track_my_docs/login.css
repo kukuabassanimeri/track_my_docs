@@ -5,8 +5,8 @@
     font-family: "poppins", Arial, Helvetica, sans-serif;
 }
 .login label {
-    display: block;  /* Ensures the label is on a separate line above the input */
-    margin-bottom: 5px;  /* Adds space between the label and input */
+    display: block;  
+    margin-bottom: 5px; 
     font-weight: bold;
 }
 

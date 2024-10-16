@@ -21,6 +21,7 @@ class UserProfile(models.Model):
     
     def __str__(self):
         return f'{self.user.username} Profile'
+    
     #override the save method
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
