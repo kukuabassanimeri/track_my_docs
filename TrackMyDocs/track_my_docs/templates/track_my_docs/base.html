@@ -29,20 +29,21 @@
 </head>
 
 <body class="bg-[#1C2120] text-[#FFFFFF]">
-
-    <nav class="navbar">
-        <ul
-            class="list-none flex flex-col md:flex-row items-center space-y-5 md:space-y-0 md:space-x-5 md:pr-20 text-white font-semi-bold md:h-20 h-full ">
-            <li
-                class="flex-1 rounded-full hover:cursor-pointer hover:text-orange-600 pl-20 animate-pulse hidden  md:inline">
-            </li>
-
-            <li class="hover:text-orange-600"><a href="{% url 'track_my_docs:home' %}">Home</a></li>
-            <li class="hover:text-orange-600"><a href="{% url 'track_my_docs:user-profile' %}">Profile</a></li>
-            <li class="hover:text-orange-600"><a href="{% url 'logout' %}" class="logout">Log Out</a></li>
-
-        </ul>
-    </nav>
+    <div class="bg-gray-600">
+        <nav class="navbar">
+            <ul
+                class="list-none flex flex-col md:flex-row items-center space-y-5 md:space-y-0 md:space-x-5 md:pr-20 text-white font-bold md:h-20 h-full ">
+                <li
+                    class="flex-1 rounded-full hover:cursor-pointer hover:text-orange-600 pl-20 animate-pulse hidden  md:inline">
+                </li>
+    
+                <li class="hover:text-black"><a href="{% url 'track_my_docs:home' %}">Home</a></li>
+                <li class="hover:text-black"><a href="{% url 'track_my_docs:user-profile' %}">Profile</a></li>
+                <li class="hover:text-black"><a href="{% url 'logout' %}" class="logout">Log Out</a></li>
+    
+            </ul>
+        </nav>
+    </div>
 
     {% block content %}
 

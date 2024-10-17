@@ -11,7 +11,7 @@
 }
 
 .new_application input[type="text"]{
-    width: 33.333333%;
+    width: 100%;
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -25,14 +25,14 @@
     margin-top: 5px;
     background-color: #737373;
     cursor: pointer;
-    width: 33.333333%;
+    width: 100%;
     border-radius: 10px;
     margin-bottom: 5px;
 }
 
 .new_application input[type="file"]::file-selector-button {
     padding: 5px;
-    background-color: #4CAF50;
+    background-color: black;
     color: white;
     border: none;
     border-radius: 10px;

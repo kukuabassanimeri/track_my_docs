@@ -22,12 +22,12 @@
 
 <body class="bg-[#1C2120] text-[#FFFFFF] pt-10">
 
-    <h1 class="text-xl text-center pb-3 font-bold text-orange-600">ID Errors ?</h1>
+    <h1 class="text-xl text-center pb-3 font-bold">ID Errors ?</h1>
     <p class="text-center pb-3">Correct any mistakes on your ID as quick as possible.</p>
 
     <div class="flex items-center justify-center text-black pt-3">
-        <div class="bg-white max-w-6xl w-full shadow-lg rounded-lg p-4">
-            <form action="" method="POST" class="status-correction text-center">
+        <div class="bg-white max-w-xl w-full shadow-lg rounded-lg p-4">
+            <form action="" method="POST" class="status-correction">
                 {% csrf_token %}
 
                 <!-- Messages block -->
@@ -42,10 +42,10 @@
                 {{ form.as_p }}
                 <p>
                     <input type="submit" value="submit"
-                        class="bg-[#FEB06A] w-32 h-10 rounded cursor-pointer mt-4 font-bold">
+                        class="bg-green-500 hover:green-400 w-full h-10 rounded cursor-pointer mt-4 font-bold">
                 </p>
 
-                <p class="pt-3 font-bold">
+                <p class="mt-3 font-bold text-center">
 
                     <a href="{% url 'track_my_docs:home' %}">Back <i class="fa-solid fa-house"></i></a>
                 </p>

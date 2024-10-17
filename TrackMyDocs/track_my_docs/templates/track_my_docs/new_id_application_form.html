@@ -18,11 +18,11 @@
 
 </head>
 <body class="bg-[#1C2120] text-[#FFFFFF] pt-16"> 
-    <h1 class="text-xl text-center pb-5 font-bold text-orange-600">New Application ?</h1>
+    <h1 class="text-xl text-center pb-5 font-bold ">New Application ?</h1>
     
     <div class="flex items-center justify-center text-black pt-3">
-        <div class="bg-white max-w-6xl w-full shadow-lg rounded-lg p-4">
-            <form action="" method="POST" class="new_application text-center">
+        <div class="bg-white max-w-xl w-full shadow-lg rounded-lg p-4">
+            <form action="" method="POST" class="new_application">
                 {% csrf_token %}
                 
                 <!-- Messages block -->
@@ -36,9 +36,9 @@
         
                 {{ form.as_p }}
                 <p>
-                    <input type="submit" value="submit" class="bg-[#FEB06A] w-32 h-10 rounded cursor-pointer mt-4 font-bold">
-                    <a href="{% url 'track_my_docs:home' %}"><span class="pl-4">Back <i class="fa-solid fa-house"></i></span></a>
+                    <input type="submit" value="submit" class="bg-green-500 hover:bg-green-400 w-full h-10 rounded cursor-pointer mt-4 font-bold">
                 </p> 
+                <p class="text-center mt-5"><a href="{% url 'track_my_docs:home' %}">Back <i class="fa-solid fa-house"></i></a></p>
             </form>
         </div>
     </div>

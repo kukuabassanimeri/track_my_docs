@@ -18,23 +18,20 @@
 
 </head>
 
-<body class="bg-[#1C2120] text-[#FFFFFF] pt-5">
-    <div class="text-center pb-5">
-        <i class="fa fa-book text-7xl pl-4" aria-hidden="true"></i>
-    </div>
-    <p class="text-center pb-5">Join <span class="font-bold text-orange-600">TrackMyDocs</span> to track Your ID status.
+<body class="bg-[#1C2120] text-[#FFFFFF]">
+    <p class="text-center mt-16 mb-5">Join <span class="font-bold text-xl">TrackMyDocs</span> to track Your ID status.
     </p>
 
     <div class="flex items-center justify-center text-black">
-        <div class="bg-white max-w-3xl w-full shadow-lg rounded-lg p-2">
-            <form action="" method="POST" class="user-signup text-center">
+        <div class="bg-white max-w-xl w-full shadow-lg rounded-lg p-5">
+            <form action="" method="POST" class="user-signup">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <p>
                     <input type="submit" value="Sign Up"
-                        class="bg-[#FEB06A] w-32 h-10 rounded cursor-pointer mt-4 font-bold">
+                        class="bg-green-500  w-full h-10 rounded cursor-pointer mt-4 font-bold hover:bg-green-400">
                 </p>
-                <div class="pt-5">
+                <div class="pt-5 text-center">
                     <p>Already Have Account?</p>
                     <p class="font-bold"><a href="{% url 'login' %}">Login !</a></p>
                 </div>
