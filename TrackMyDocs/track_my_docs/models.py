@@ -58,3 +58,12 @@ class LostIDReapplicationModelForm(models.Model):
     def __str__(self):
         return self.username
     
+#TrackMyDocs user lost FingerPrint Booking
+class FingerPrintModelForm(models.Model):
+    user_name = models.CharField(max_length=50)
+    registration_no = models.IntegerField()
+    user_reason = models.TextField()
+
+    def __str__(self):
+        return self.user_name
+        

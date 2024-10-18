@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import UserRegisterForm
 from .forms import UserComplaintForm, UpdateUserModelForm, UpdateProfileModelForm
 from django.contrib.auth.decorators import login_required
-from .forms import NewIDApplicationModelForm, StatusCorrectionModelForm, LostIDReapplicationModelForm
+from .forms import NewIDApplicationModelForm, StatusCorrectionModelForm, LostIDReapplicationModelForm, FingerPrintModelForm
 from django.contrib import messages
 
 
@@ -107,3 +107,16 @@ def lost_id_reapplication(request):
         lost_form = LostIDReapplicationModelForm()
     context = {'lost_form': lost_form}
     return render(request, 'track_my_docs/lost_id_reapplication.html', context)
+
+#TrackMyDocs user fingerprint booking view
+def fingerprint_booking(request):
+    if request.method == 'POST':
+        f_form = FingerPrintModelForm(request.POST)
+        if f_form.is_valid():
+            f_form.save()
+            messages.success(request, 'Your fingerprint booking is received and it is under review')
+            return redirect('track_my_docs:fingerprint-booking')
+    else:
+        f_form = FingerPrintModelForm()
+    context_v = {'f_form': f_form}
+    return render(request, 'track_my_docs/fingerprint_booking.html', context_v)

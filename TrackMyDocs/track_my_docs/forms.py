@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import (UserComplaintForm, NewIDApplicationModelForm, StatusCorrectionModelForm, LostIDReapplicationModelForm, UserProfile)
+from .models import (UserComplaintForm, NewIDApplicationModelForm, StatusCorrectionModelForm, LostIDReapplicationModelForm, UserProfile, FingerPrintModelForm)
 
 #TrackMyDocs user registration form
 class UserRegisterForm(forms.ModelForm):
@@ -52,3 +52,9 @@ class UpdateProfileModelForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['photo']
+        
+#TrackMyDocs user FingerPrint Booking form
+class FingerPrintModelForm(forms.ModelForm):
+    class Meta:
+        model = FingerPrintModelForm
+        fields = ['user_name', 'registration_no', 'user_reason']

@@ -19,7 +19,7 @@
 </div>
 
 <!--Our services-->
-<div class="grid gap-8 grid-cols-1 pt-5 md:grid-cols-2 lg:grid-cols-2 mx-auto max-w-3xl">
+<div class="grid gap-10 grid-cols-1 pt-5 md:grid-cols-3 lg:grid-cols-3 mx-auto max-w-3xl">
     <!-- New Application -->
     <a href="{% url 'track_my_docs:new-id-application' %}">
         <div
@@ -53,6 +53,15 @@
             class="bg-red-500 text-white shadow-lg rounded-lg p-6 flex flex-col items-center hover:bg-red-600 transition duration-300 ease-in-out">
             <i class="fas fa-exclamation-circle text-5xl mb-4"></i>
             <p class="text-base font-semibold">Complaints</p>
+        </div>
+    </a>
+
+    <!-- Fingerprint Appointment-->
+      <a href="{% url 'track_my_docs:fingerprint-booking' %}">
+        <div
+            class="bg-purple-500 text-white shadow-lg rounded-lg p-6 flex flex-col items-center hover:bg-purple-600 transition duration-300 ease-in-out">
+            <i class="fas fa-fingerprint text-5xl mb-4"></i>
+            <p class="text-base font-semibold">Fingerprint Booking</p>
         </div>
     </a>
 
