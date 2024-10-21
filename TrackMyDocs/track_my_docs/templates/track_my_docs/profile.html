@@ -6,27 +6,28 @@
 <link rel="stylesheet" href="{% static 'track_my_docs/profile.css' %}">
 {% endblock css%}
 
-  <!--Support css-->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <script src="https://kit.fontawesome.com/caeb9ec53e.js" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!--Support css-->
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+<script src="https://kit.fontawesome.com/caeb9ec53e.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 {% block content %}
 <div class="text-center text-xl font-bold mt-5 pt-5">
-  <h2 >Update Your Profile Incase !</h2>
+  <h2>Update Your Profile Incase !</h2>
 </div>
-  <!-- Messages block -->
-  {% if messages %}
-  <div class="text-center text-sm mb-2">
-      {% for message in messages %}
-          <p class="text-blue-600">{{ message }}</p>
-      {% endfor %}
-  </div>
+<!-- Messages block -->
+{% if messages %}
+<div class="text-center text-sm mb-2">
+  {% for message in messages %}
+  <p class="text-blue-600">{{ message }}</p>
+  {% endfor %}
+</div>
 {% endif %}
 
 <div class=" flex max-w-xl w-full text-black gap-5 mt-8 mr-auto ml-auto">
   <div class="bg-white shadow-lg rounded-lg p-4">
-    <img src="{{ user.userprofile.photo.url }}" alt="Abass" class="w-32 rounded-full h-32 cursor-pointer mr-auto ml-auto">
+    <img src="{{ user.userprofile.photo.url }}" alt="Abass"
+      class="w-32 rounded-full h-32 cursor-pointer mr-auto ml-auto">
 
     <div>
       <h2 class="text-left mt-4 font-semi-bold">{{ user.username }}</h2>
@@ -37,16 +38,17 @@
   <div class="bg-gray-400  shadow-lg rounded-lg p-4">
     <form action="" method="POST" enctype="multipart/form-data" class="profile">
       {% csrf_token %}
-        {{ u_form.as_p }}
-        {{ p_form.as_p}}
-  
+      {{ u_form.as_p }}
+      {{ p_form.as_p}}
+
       <div class="form-group">
-        <button type="submit" class="bg-green-500 hover:bg-green-400 w-full h-10 rounded cursor-pointer mt-4 font-bold">Update!</button>
-  
+        <button type="submit"
+          class="bg-green-500 hover:bg-green-400 w-full h-10 rounded cursor-pointer mt-4 font-bold">Update!</button>
+
       </div>
     </form>
   </div>
-  
+
 </div>
 
 {% endblock content %}
