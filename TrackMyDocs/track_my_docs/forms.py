@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import (UserComplaintForm, NewIDApplicationModelForm, StatusCorrectionModelForm, LostIDReapplicationModelForm, UserProfile, FingerPrintModelForm)
+from .models import (UserComplaintForm, NewIDApplicationModelForm, StatusCorrectionModelForm, LostIDReapplicationModelForm, UserProfile, FingerPrintModelForm, RenewIDModelForm)
 
 #TrackMyDocs user registration form
 class UserRegisterForm(forms.ModelForm):
@@ -27,19 +27,29 @@ class UserComplaintForm(forms.ModelForm):
 class NewIDApplicationModelForm(forms.ModelForm):
     class Meta:
         model = NewIDApplicationModelForm
-        fields = [ 'name', 'manifest', 'headshot', 'fingerprint' ]
+        fields = [ 'full_name', 'manifest', 'headshot', 'fingerprint' ]
+        
+        def clean(self):
+            cleaned_data = super().clean()
+
+        # Check that each file field has a file uploaded
+            for field in ['manifest', 'headshot', 'fingerprint']:
+                if not cleaned_data.get(field):
+                    self.add_error(field, f"Please upload a file for {field}.")
+
+            return cleaned_data
 
 #TrackMyDocs user ID status correction
 class StatusCorrectionModelForm(forms.ModelForm):
     class Meta:
         model = StatusCorrectionModelForm
-        fields = ['user_name', 'user_id', 'reason']
+        fields = ['full_name', 'id_card', 'reason']
 
 # TrackMyDocs user lost Id reapplication
 class LostIDReapplicationModelForm(forms.ModelForm):
     class Meta:
         model = LostIDReapplicationModelForm
-        fields = ['username', 'police_abstract']
+        fields = ['full_name', 'police_abstract']
 
 #TrackMyDocs update user form
 class UpdateUserModelForm(forms.ModelForm):
@@ -57,4 +67,11 @@ class UpdateProfileModelForm(forms.ModelForm):
 class FingerPrintModelForm(forms.ModelForm):
     class Meta:
         model = FingerPrintModelForm
-        fields = ['user_name', 'registration_no', 'user_reason']
+        fields = ['full_name', 'individual_no', 'message']
+        
+# TrackMyDocs user Renew ID form
+
+class RenewIDModelForm(forms.ModelForm):
+    class Meta:
+        model = RenewIDModelForm
+        fields = ['full_name', 'expired_id']

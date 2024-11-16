@@ -33,37 +33,44 @@ class UserProfile(models.Model):
 
 #TracKMyDocus user new ID application
 class NewIDApplicationModelForm(models.Model):
-    name = models.CharField(max_length=100)
-    manifest = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    full_name = models.CharField(max_length=100)
+    manifest = models.ImageField(default='default.jpg', upload_to='profile_pics', error_messages={"required": "Please upload file"}, blank=False, null=False)
     headshot = models.ImageField(default='default.jpg', upload_to='profile_pics')
     fingerprint = models.ImageField(default='default.jpg', upload_to='profile_pics')
     
     def __str__(self):
-        return self.name
+        return self.full_name
     
 #TrackMyDocs users ID status correction
 class StatusCorrectionModelForm(models.Model):
-    user_name = models.CharField(max_length=50)
-    user_id = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    full_name = models.CharField(max_length=50)
+    id_card = models.ImageField(default='default.jpg', upload_to='profile_pics')
     reason = models.TextField()
         
     def __str__(self):
-        return self.user_name
+        return self.full_name
 
 #TrackMyDocs user lost id reapplication
 class LostIDReapplicationModelForm(models.Model):
-    username = models.CharField(max_length=50)
+    full_name = models.CharField(max_length=50)
     police_abstract = models.ImageField(default='default.jpg', upload_to='profile_pics')
     
     def __str__(self):
-        return self.username
+        return self.full_name
     
 #TrackMyDocs user lost FingerPrint Booking
 class FingerPrintModelForm(models.Model):
-    user_name = models.CharField(max_length=50)
-    registration_no = models.IntegerField()
-    user_reason = models.TextField()
+    full_name = models.CharField(max_length=50)
+    individual_no = models.IntegerField()
+    message = models.TextField()
 
     def __str__(self):
-        return self.user_name
-        
+        return self.full_name
+    
+#TrackMyDocs user expired Id renewal
+class RenewIDModelForm(models.Model):
+    full_name = models.CharField(max_length=50)
+    expired_id = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    
+    def __str__(self):
+        return self.full_name

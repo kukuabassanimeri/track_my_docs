@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Expired ID Renewal </title>
+
+    {% load static %}
+
+    <!--User new ID application css link-->
+    <link rel="stylesheet" href="{% static 'track_my_docs/lost_id_reapplication.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'media_files/documentation.png' %}">
+
+    <!--Support css-->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://kit.fontawesome.com/caeb9ec53e.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="bg-[#1C2120] text-[#FFFFFF] pt-20">
+
+    <h1 class="text-xl text-center pb-3 font-bold">Expired ID?</h1>
+    <p class="text-center pb-3">Renew your expired ID with just single click.</p>
+
+    <div class="flex items-center justify-center text-black pt-3">
+        <div class="bg-white max-w-xl w-full shadow-lg rounded-lg p-4">
+            <form action="" method="POST" class="lost-id-reapplication">
+                {% csrf_token %}
+
+                <!-- Messages block -->
+                {% if messages %}
+                <div class="text-center py-2">
+                    {% for message in messages %}
+                    <p class="text-blue-600">{{ message }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {{ r_form.as_p }}
+                <p>
+                    <input type="submit" value="submit"
+                        class="bg-green-500 hover:bg-green-400 w-full h-10 rounded cursor-pointer mt-4 font-bold">
+                </p>
+                <p class="mt-5 font-bold text-center">
+
+                    <a href="{% url 'track_my_docs:home' %}">Back <i class="fa-solid fa-house"></i></a>
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

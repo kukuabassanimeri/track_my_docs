@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import UserComplaintForm, UserProfile, NewIDApplicationModelForm, StatusCorrectionModelForm, LostIDReapplicationModelForm, FingerPrintModelForm
+from .models import UserComplaintForm, UserProfile, NewIDApplicationModelForm, StatusCorrectionModelForm, LostIDReapplicationModelForm, FingerPrintModelForm, RenewIDModelForm
 
 # Register your models here.
 
@@ -9,3 +9,4 @@ admin.site.register(NewIDApplicationModelForm)
 admin.site.register(StatusCorrectionModelForm)
 admin.site.register(LostIDReapplicationModelForm)
 admin.site.register(FingerPrintModelForm)
+admin.site.register(RenewIDModelForm)

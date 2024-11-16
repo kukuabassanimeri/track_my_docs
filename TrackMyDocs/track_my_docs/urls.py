@@ -30,5 +30,8 @@ urlpatterns = [
     path('lost-id-reapplication/', views.lost_id_reapplication, name='lost-id-reapplication'),
     
     #TrackMyDocs user fingerprint booking
-    path('fingerprint_booking/', views.fingerprint_booking, name='fingerprint-booking')
+    path('fingerprint_booking/', views.fingerprint_booking, name='fingerprint-booking'),
+    
+    #TrackMyDocs user renew expired id
+    path('renew-id/', views.renew_id, name='renew-id')
 ]
