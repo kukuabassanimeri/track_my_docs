@@ -7,7 +7,7 @@ from PIL import Image
 
 #TrackMyDocs user complaint model
 class UserComplaintForm(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, blank=False)
     individual_no = models.IntegerField()
     message = models.TextField()
     
@@ -33,8 +33,8 @@ class UserProfile(models.Model):
 
 #TracKMyDocus user new ID application
 class NewIDApplicationModelForm(models.Model):
-    full_name = models.CharField(max_length=100)
-    manifest = models.ImageField(default='default.jpg', upload_to='profile_pics', error_messages={"required": "Please upload file"}, blank=False, null=False)
+    full_name = models.CharField(max_length=100, blank=False)
+    manifest = models.ImageField(default='default.jpg', upload_to='profile_pics', blank=False, null=False)
     headshot = models.ImageField(default='default.jpg', upload_to='profile_pics')
     fingerprint = models.ImageField(default='default.jpg', upload_to='profile_pics')
     

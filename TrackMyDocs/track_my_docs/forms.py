@@ -29,16 +29,7 @@ class NewIDApplicationModelForm(forms.ModelForm):
         model = NewIDApplicationModelForm
         fields = [ 'full_name', 'manifest', 'headshot', 'fingerprint' ]
         
-        def clean(self):
-            cleaned_data = super().clean()
-
-        # Check that each file field has a file uploaded
-            for field in ['manifest', 'headshot', 'fingerprint']:
-                if not cleaned_data.get(field):
-                    self.add_error(field, f"Please upload a file for {field}.")
-
-            return cleaned_data
-
+        
 #TrackMyDocs user ID status correction
 class StatusCorrectionModelForm(forms.ModelForm):
     class Meta:
